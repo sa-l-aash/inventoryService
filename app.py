@@ -4,12 +4,12 @@ import os
 
 app = Flask(__name__)
 
-# Use environment variables for config (recommended on Render)
+# Use environment variables or fallback values
 db_config = {
     'user': os.environ.get('DB_USER', 'flask_user'),
     'password': os.environ.get('DB_PASSWORD', 'ASKprime123456789.COM'),
-    'host': os.environ.get('DB_HOST', 'localhost'),  # Update this to your actual host on Render
-    'port': int(os.environ.get('DB_PORT', 3308)),
+    'host': os.environ.get('DB_HOST', 'localhost'),  # Replace with actual external host on Render
+    'port': int(os.environ.get('DB_PORT', 3308)),    # Use 3308 explicitly
     'database': os.environ.get('DB_NAME', 'inventory_db')
 }
 
@@ -46,4 +46,4 @@ def add_product():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)  # Port 5000 is required by Render
+    app.run(debug=True, host='0.0.0.0', port=5000)  # Required for Render
