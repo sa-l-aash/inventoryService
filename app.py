@@ -16,7 +16,7 @@ db_config = {
 
 @app.route('/')
 def index():
-    return "[]"
+    return "[{"id":1,"name":"chair","price":9.99,"stock":30},{"id":2,"name":"Kettle","price":2.99,"stock":15}]"
 
 @app.route('/products', methods=['GET'])
 def get_products():
