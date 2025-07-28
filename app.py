@@ -6,12 +6,13 @@ app = Flask(__name__)
 
 # Use environment variables or fallback values
 db_config = {
-    'user': os.environ.get('DB_USER', 'flask_user'),
-    'password': os.environ.get('DB_PASSWORD', 'ASKprime123456789.COM'),
-    'host': os.environ.get('DB_HOST', 'localhost'),  # Replace with actual external host on Render
-    'port': int(os.environ.get('DB_PORT', 3308)),    # Use 3308 explicitly
-    'database': os.environ.get('DB_NAME', 'inventory_db')
+    'user': os.environ.get('MYSQLUSER', 'root'),
+    'password': os.environ.get('MYSQLPASSWORD', 'vtyiHJAehCLUpFHcqmWfhbfBPMYZdbdi'),
+    'host': os.environ.get('MYSQLHOST', 'mysql.railway.internal'),
+    'port': int(os.environ.get('MYSQLPORT', 3306)),
+    'database': os.environ.get('MYSQLDATABASE', 'railway')
 }
+
 
 @app.route('/')
 def index():
