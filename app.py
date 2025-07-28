@@ -16,7 +16,7 @@ db_config = {
 
 @app.route('/')
 def index():
-    return "✅ Welcome to Inventory Service!"
+    return "[]"
 
 @app.route('/products', methods=['GET'])
 def get_products():
